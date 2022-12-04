@@ -5,4 +5,4 @@ Disallow: /projects/
 Disallow: /posts/
 Disallow: /privacy/
 
-Sitemap: https://www.polydot.fr/sitemap.xml
+Sitemap: https://polydot2.github.io/polysite/sitemap.xml
