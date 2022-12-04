@@ -1,0 +1,54 @@
+baseURL = 'https://polydot.fr/'
+languageCode = 'en-us'
+title = 'Polydot.'
+description = 'We create mobile apps and games.'
+theme = "freelancer"
+
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    weight = 1
+  [languages.fr]
+    languageName = 'Français'
+    weight = 2
+    
+# English
+[languages.en.params]
+  tagLine = "We make apps"
+  aboutLeft = "Polydot is a team based on France. We work on multiple projects like mobile apps and some games. You can find some prototypes and Ludum dare idea on itch.io"
+  aboutRight = "We also provides services to other companies as a pro mobile agency with iOS, Android and Flutter development skills."
+
+#[languages.en.params.homebutton]
+#  text = "See on playstore"
+#  link = "https://play.google.com/store/apps/dev?id=8467627904072360571&hl=en&gl=US" 
+#  icon = "fa-store"
+
+# global
+[params]
+  homePosts = 0
+  homeProjects = 10
+
+[params.location]
+    lineOne = "Nantes, 44000"
+    lineTwo = "France" 
+
+[params.sbform]
+token = ""
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+[[related.indices]]
+  name = 'tags'
+  weight = 100
+[[related.indices]]
+  name = 'date'
+  weight = 10
+
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
+
+enableRobotsTXT = false
