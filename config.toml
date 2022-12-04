@@ -1,4 +1,4 @@
-baseURL = 'https://polydot.fr/'
+baseURL = 'https://polydot2.github.io/polysite/'
 languageCode = 'en-us'
 title = 'Polydot.'
 description = 'We create mobile apps and games.'
