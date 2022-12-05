@@ -17,8 +17,8 @@ defaultContentLanguage = 'en'
 # English
 [languages.en.params]
   tagLine = "We make apps"
-  aboutLeft = "Polydot is a team based on France. We work on multiple projects like mobile apps and some games. You can find some prototypes and Ludum dare idea on itch.io"
-  aboutRight = "We also provides services to other companies as a pro mobile agency with iOS, Android and Flutter development skills."
+  aboutLeft = "As a studios Polydot mostly build mobile apps for Android/iOs and some games and prototypes on itch.io"
+  aboutRight = "As a agency we provide support, designs, and development skills for external projects."
 
 #[languages.en.params.homebutton]
 #  text = "See on playstore"
@@ -32,7 +32,7 @@ defaultContentLanguage = 'en'
 
 [params.location]
     lineOne = "Nantes, 44000"
-    lineTwo = "France" 
+    lineTwo = "France 🇫🇷" 
 
 [params.sbform]
 token = ""
