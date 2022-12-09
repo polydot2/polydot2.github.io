@@ -1,47 +1,42 @@
-
-{{ $element  :=  first .Site.Params.HomeProjects (where .Site.RegularPages.ByDate.Reverse "Section" "projects") }}
-
+{{ $element := first .Site.Params.HomeProjects (where .Site.RegularPages.ByDate.Reverse "Section" "projects") }}
 
 {{ if $element }}
-<div style="background-color: #2c3e50;">
-<section class="page-section portfolio pb-5" id="portfolio">
-	<div class="container">
-		<!-- Portfolio Section Heading-->
-		<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projects</h4>
-		<!-- Icon Divider-->
+<div style="background-color: #2c3e50;" class="text-white">
+	<section class="page-section portfolio pb-5" id="portfolio" style="background-color: #1a252f;">
+		<div class="container">
+			<!--<h4 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">Projects</h4>
 		<div class="divider-custom">
-			<div class="divider-custom-line"></div>
-			<div class="divider-custom-icon"><em class="fas fa-heart"></em></div>
-			<div class="divider-custom-line"></div>
-		</div>
-		<!-- Portfolio Grid Items-->
-		<div class="row justify-content-center">
-			<!-- Portfolio Item 1-->
-			{{ $counter := 0 }}
-			{{ range $element }}
-			{{ $counter = add $counter 1 }}
-			<div class="col-md-6 col-lg-4 mb-5">
-				<div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modal{{$counter}}" >
-					<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-						<div class="portfolio-item-caption-content text-center text-white"><em class="fas fa-magnifying-glass fa-3x"></em></div>
+			<div class="divider-custom-line" style="background-color: white; border-color: white"></div>
+			<div class="divider-custom-icon text-white"><em class="fas fa-heart"></em></div>
+			<div class="divider-custom-line" style="background-color: white; border-color: white"></div>
+		</div>-->
+			<br>
+			<!-- Portfolio Grid Items-->
+			<div class="row justify-content-center">
+				<!-- Portfolio Item 1-->
+				{{ $counter := 0 }}
+				{{ range $element }}
+				{{ $counter = add $counter 1 }}
+				<div class="container">
+					<div class="row mb-5 row justify-content-md-center">
+						<div class="col-md-6 col-lg-4">
+							<img class="img-fluid" style="border-radius: 8px;
+					border: 1px solid #2c3e50;" src="/{{.Page.Params.Hero}}" alt="..." />
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="text-uppercase"><strong> {{.Page.Params.Title}} </strong></div>
+							<br>
+							<div> {{.Page.Params.Summary}} </div>
+							<!--<a href="{{.Permalink}}" class="btn btn-primary btn-lg">Read More</a>-->
+							<br>
+							<a href="{{ .Params.Playstore }}" target="_blank" rel="noopener noreferrer"> <img
+									height="60" src="/google-play-badge-nopad.png" /></a>
+						</div>
 					</div>
-					<img class="img-fluid" src="/{{.Page.Params.Hero}}" alt="..." />
-					<div> {{.Page.Params.Title}} </div>
-
-					<!--<div class="text-center" 
-					style="background: {{.Page.Params.Color}};
-					border-radius: 25px;
-					padding: 20px;
-					width: 200px;
-					height: 150px;
-					"> {{.Page.Params.Title}}</div>-->
-
 				</div>
-			</div>    
-			{{ end }}
+				{{ end }}
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 </div>
 {{ end }}
-

@@ -1,4 +1,4 @@
-{{ $element :=  first .Site.Params.HomePosts (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
+{{ $element := first .Site.Params.HomePosts (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
 
 
 {{ if $element }}
@@ -14,15 +14,16 @@
 		</div>
 		<div class="row justify-content-left">
 			<!-- Portfolio Item 1-->
-            {{ range $index, $element }}
-				<div class="col-md-4">
-					<div class="card mb-4 ">
-						<a href="{{.Permalink}}"><img class="card-img-top" src="{{.Permalink}}{{.Page.Params.Hero}}" alt="Card image cap"></a>
-					</div>
-				  </div>                
-				{{ end }}
-			
+			{{ range $index, $element }}
+			<div class="col-md-4">
+				<div class="card mb-4 ">
+					<a href="{{.Permalink}}"><img class="card-img-top" src="/{{.Page.Params.Hero}}"
+							alt="Card image cap"></a>
+				</div>
+			</div>
+			{{ end }}
+
 		</div>
 	</div>
-</section> 
+</section>
 {{ end }}

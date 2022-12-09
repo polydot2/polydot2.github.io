@@ -1,6 +1,6 @@
 baseURL = 'https://polydot2.github.io'
 languageCode = 'en-us'
-title = 'Polydot.'
+title = 'Polydot'
 description = 'We create mobile apps and games.'
 theme = "freelancer"
 
@@ -10,14 +10,11 @@ defaultContentLanguage = 'en'
   [languages.en]
     languageName = 'English'
     weight = 1
-  [languages.fr]
-    languageName = 'Français'
-    weight = 2
     
 # English
 [languages.en.params]
   tagLine = "We make apps"
-  aboutLeft = "As a studio Polydot build mobile apps for Android/iOs, games and prototypes on itch.io"
+  aboutLeft = "As a studio Polydot build mobile apps for Android/iOs. Sometimes some games hackathon on itch.io"
   aboutRight = "As a agency we provide support and development skills for external projects."
 
 #[languages.en.params.homebutton]
@@ -35,7 +32,12 @@ defaultContentLanguage = 'en'
     lineTwo = "France 🇫🇷" 
 
 [params.sbform]
-token = ""
+  token = ""
+
+[params.social]
+  networks = [
+      ["fa-google-play", "https://play.google.com/store/apps/dev?id=8467627904072360571"],
+  ]
 
 [related]
   includeNewer = true
