@@ -17,7 +17,7 @@ defaultContentLanguage = 'en'
 # English
 [languages.en.params]
   tagLine = "We make apps"
-  aboutLeft = "As a studio Polydot build mobile apps for Android/iOs and games and prototypes on itch.io"
+  aboutLeft = "As a studio Polydot build mobile apps for Android/iOs, games and prototypes on itch.io"
   aboutRight = "As a agency we provide support and development skills for external projects."
 
 #[languages.en.params.homebutton]
