@@ -15,7 +15,7 @@
 					{{ range .Paginator.Pages }}
 					<div class="col-md-4">
 						<div class="card mb-4 ">
-							<a href="{{.Permalink}}"><img class="card-img-top" src="{{.Page.Params.Hero}}" alt="Card image cap"></a>
+							<a href="{{.Permalink}}"><img class="card-img-top" src="/{{.Page.Params.Hero}}" alt="Card image cap"></a>
 						  <div class="card-body">
 							<h5 class="card-title">{{ .Title }}</h5>
 							<p class="card-text">{{ .Summary }}</p>
