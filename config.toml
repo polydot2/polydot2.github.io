@@ -26,6 +26,8 @@ defaultContentLanguage = 'en'
 [params]
   homePosts = 0
   homeProjects = 10
+  googleAnalyticsID = "G-215S5D7LYR"
+  description = 'We create mobile apps and games.'
 
 [params.location]
     lineOne = "Nantes, 44000"
@@ -38,9 +40,6 @@ defaultContentLanguage = 'en'
   networks = [
       ["fa-google-play", "https://play.google.com/store/apps/dev?id=8467627904072360571"],
   ]
-
-# Google Analytics 4
-googleAnalyticsID = "G-215S5D7LYR"
 
 [related]
   includeNewer = true
