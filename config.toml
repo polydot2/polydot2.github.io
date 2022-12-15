@@ -39,6 +39,8 @@ defaultContentLanguage = 'en'
       ["fa-google-play", "https://play.google.com/store/apps/dev?id=8467627904072360571"],
   ]
 
+googleAnalytics = "G-215S5D7LYR"
+
 [related]
   includeNewer = true
   threshold = 80
