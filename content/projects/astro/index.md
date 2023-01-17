@@ -6,6 +6,7 @@ tags: []
 hero: "astro.png"
 draft: false
 summary: "A simple daily prediction app and tarot readings."
+summary: "Tarot readings card and collection. Provide a minimalist horoscope and motivations quotes."
 playstore: https://play.google.com/store/apps/details?id=com.poly.astrology
 single: true
 ---

@@ -136,6 +136,7 @@ placeholder()
 
 miniature('com.poly.france_actu', 'en', 'Actu France\npocket news', 'actufrance.png')
 miniature('com.poly.astrology', 'en', 'Astro\ndaily news', 'astro.png')
+miniature('com.poly.market', 'fr', 'Bons plans\nEn vrac!', 'envrac.png')
 
 miniature('com.clanmo.europcar', 'fr', 'Europcar', 'europcar.png')
 miniature('fr.proximity.proximity', 'fr', 'MyProximity', 'myproximity.png')
