@@ -1,17 +1,9 @@
 {{ $element := first .Site.Params.HomePosts (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
-
-
 {{ if $element }}
 <section class="page-section portfolio pb-5" id="posts">
 	<div class="container">
 		<!-- Portfolio Section Heading-->
-		<h2 class="page-section-heading text-center text-uppercase text-secondary">Blog</h2>
 		<!-- Icon Divider-->
-		<div class="divider-custom">
-			<div class="divider-custom-line"></div>
-			<div class="divider-custom-icon"><em class="fas fa-star"></em></div>
-			<div class="divider-custom-line"></div>
-		</div>
 		<div class="row justify-content-left">
 			<!-- Portfolio Item 1-->
 			{{ range $index, $element }}
@@ -20,6 +12,8 @@
 					<a href="{{.Permalink}}"><img class="card-img-top" src="/{{.Page.Params.Hero}}"
 							alt="Card image cap"></a>
 				</div>
+				<div><strong>{{.Title}}</strong></div>
+				<div>{{.Summary}}</div>
 			</div>
 			{{ end }}
 

@@ -1,43 +1,29 @@
-<footer class="footer copyright text-center">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4 mb-5 mb-lg-0">
-				<h4 class="text-uppercase mb-4">Location</h4>
-				<p class="lead mb-0">
-					<!--{{ .Site.Params.Location.lineone }}
-					<br />--> 
-					{{ .Site.Params.Location.linetwo }}
-				</p>
+<footer class="copyright text-center ">
+	<small>
+		<br>
+		{{ range .Site.Params.Social.networks }}
+		<a class="btn btn-outline-light btn-social mx-1" href="{{ index . 1 }}" target="_blank"><em
+				class="fab fa-fw {{ index . 0 }}"></em></a>
+		{{end}}
+		<div class="copyright py-4 text-center text-white">
+			<div class="container">
+				Copyright &copy; {{ .Site.Title }} {{ now.Format "2006" }}
 			</div>
-			<div class="col-lg-4 mb-5 mb-lg-0">
-				<h4 class="text-uppercase mb-4"></h4>
-				{{ range .Site.Params.Social.networks }}
-				<a class="btn btn-outline-light btn-social mx-1" href="{{ index . 1 }}" target="_blank"><em
-						class="fab fa-fw {{ index . 0 }}"></em></a>
-				{{end}}
-
-			</div>
-			<div class="col-lg-4">
-				<h4 class="text-uppercase mb-4">Links</h4>
-				<p class="lead mb-0">
-					<small>
-						<a href='https://gohugo.io/'>Made with HUGO <em class="fas fa-heart"></em></a>
-						<br />
-					</small>
-				</p>
-			</div>
+			<br>
+			<a href='{{ "/privacy/" }}'>Privacy policies</a>
+			.
+			<a href='{{ "/privacy/" }}'>Terms</a>
+			.
+			<a href='https://gohugo.io/'>Made with HUGO <em class="fas fa-heart"></em></a>
 		</div>
-	</div>
+	</small>
+	<br>
 </footer>
-<div class="copyright py-4 text-center text-white">
-	<div class="container"><small>Copyright &copy; {{ .Site.Title }} {{ now.Format "2006" }} -
-			<a href='{{ "/privacy/" }}'>Privacy policies</a></small>
-	</div>
-</div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 </body>
 {{ partial "project-modal.html" . }}
+
 </html>
 
 <!-- Bootstrap core JS-->

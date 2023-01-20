@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="container pb-5 pt-5">
+<div class="container pb-5">
 	<div class="row">
 		<section class="page-section portfolio {{ if .Page.Params.sidebar }} col-12 col-lg-10 {{ end }} ">
 			{{if (ne .Page.Params.Hero "") }}
@@ -8,44 +8,48 @@
 					src="/{{.Page.Params.Hero}}" alt="">
 			</div>
 			{{ end }}
-			<!-- Portfolio Section Heading-->
-			<!--<h2 class="page-section-heading text-center text-uppercase text-secondary mt-5">{{ .Title  }}</h2>-->
-			<!-- Icon Divider-->
-			<!--<div class="divider-custom m-0">
-				<div class="divider-custom-line"></div>
-				<div class="divider-custom-icon"><em class="fas fa-comment"></em></div>
-				<div class="divider-custom-line"></div>
-			</div> -->
-			{{ if isset .Params "tags" -}}
-			<div class="col text-center text-nowrap">
-				{{ range $index, $name := sort .Params.tags -}}
-				<a class="h4" href={{ (printf "/tags/%s/" $name) | urlize }} title="{{$name | markdownify }}"><span
-						class="badge bg-primary p-2 m-1 ">{{$name | markdownify}}</span></a>
-				{{end}}
-			</div>
-			{{ end }}
+			<!--<<h2 class="page-section-heading text-center text-secondary mt-5">{{ .Title }}</h2>
 
-			<div class="container pt-5">
+			<br>
+			div class="text-center text-secondary">
+				<i class="fa-solid fa-headphones"></i>
+				Jeremy Girerd
+				.
+				<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}"> {{ .Date | time.Format ":date_long" }}</time>
+				. <i class="fa-brands fa-readme"></i> 5 min read
+			</div>-->
+			<div class="container pt-5 text-secondary">
 				<div class="row justify-content-md-center">
-					<div class="col col-lg-2">
-					</div>
 					<div class="col-10">
 						{{ .Content }}
 						{{ if not .Params.Single }}
 						{{ partial "single-pagination.html" . }}
 						{{ end}}
-					</div>
-					<div class="col col-lg-2">
+
+						<br>
+						{{ if isset .Params "tags" -}}
+						<div class="col text-nowrap">
+							{{ range $index, $name := sort .Params.tags -}}
+							<a class="h4" href={{ (printf "/tags/%s/" $name) | urlize }} title="{{$name | markdownify }}"><span
+									class="badge bg-primary p-2 m-1 ">{{$name | markdownify}}</span></a>
+							{{end}}
+						</div>
+						{{ end }}
+
 					</div>
 				</div>
 			</div>
+		<br>
 		</section>
+		<!--<hr>
+		<br>
+		<h2> More articles </h2>
+		{{ partial "posts.html" . }}
 
 		{{ if .Page.Params.sidebar }}
 		{{ partial "sidebar.html" . }}
-		{{ end }}
+		{{ end }}-->
 	</div>
 </div>
-
 
 {{ end }}

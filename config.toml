@@ -24,7 +24,7 @@ defaultContentLanguage = 'en'
 
 # global
 [params]
-  homePosts = 0
+  homePosts = 3
   homeProjects = 10
   googleAnalyticsID = "G-215S5D7LYR"
   description = 'We create mobile apps and games.'
