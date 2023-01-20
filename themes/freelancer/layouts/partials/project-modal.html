@@ -1,0 +1,33 @@
+{{ $element := first .Site.Params.HomeProjects (where .Site.RegularPages.ByDate.Reverse "Section" "projects") }}
+
+{{ if $element }}
+{{ $counter := 0 }}
+{{ range $element }}
+{{ $counter = add $counter 1 }}
+<div class="portfolio-modal modal fade" id="modal{{$counter}}" tabindex="-1" aria-labelledby="modal{{$counter}}"
+	aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="background-color: #1a252f;">
+			<div class="modal-body text-center pb-5">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modal{{$counter}}">
+							<br>
+							<img class="img-fluid" style="border-radius: 8px;" src="/{{.Page.Params.Hero}}" alt="..." />
+							<br>
+							<br>
+							<div class="text-white" style="text-align: left;"> {{.Page.Params.Summary}} </div>
+							<!--<a href="{{.Permalink}}" class="btn btn-primary btn-lg">Read More</a>-->
+							<br>
+							<a href="{{ .Params.Playstore }}" target="_blank" rel="noopener noreferrer"> <img
+									height="60" src="/google-play-badge-nopad.png" /></a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ end }}
+{{ end }}
