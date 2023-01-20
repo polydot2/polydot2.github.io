@@ -6347,7 +6347,7 @@ fieldset:disabled .btn {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;
-    margin: 1.75rem auto;
+    margin: 4% auto;
   }
 
   .modal-dialog-scrollable {
@@ -6364,7 +6364,6 @@ fieldset:disabled .btn {
 }
 
 @media (min-width: 992px) {
-
   .modal-lg,
   .modal-xl {
     max-width: 800px;
