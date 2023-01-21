@@ -1,46 +1,64 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<html lang="{{ .Site.LanguageCode | default " en-us" }}">
+
 <head>
- 	{{ if .Site.Params.GoogleAnalyticsID }}
-  	{{ partial "analytics-gtag.html" . }}
-  	{{ end }}
+	{{ if .Site.Params.GoogleAnalyticsID }}
+	{{ partial "analytics-gtag.html" . }}
+	{{ end }}
 
 	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ .Title }}</title>
-		
-    	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.description }}<meta itemprop="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.description }}<meta name="twitter:description" content="{{ . }}"/>{{ end }}
-	{{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}" />{{ end }}
-    <meta property="og:type" content="website">
 
-	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+	{{ with .Site.Params.description }}
+	<meta name="description" content="{{ . }}">{{ end }}
+	{{ with .Site.Params.description }}
+	<meta itemprop="description" content="{{ . }}">{{ end }}
+	{{ with .Site.Params.description }}
+	<meta name="twitter:description" content="{{ . }}" />{{ end }}
+	{{ with .Site.Params.description }}
+	<meta property="og:description" content="{{ . }}" />{{ end }}
+	<meta property="og:type" content="website">
 
-    <meta content="https://uploads-ssl.webflow.com/6003416b0aa4a84bf3bfbd91/6006d8a7ee85fd0aa56789b9_WIGNET1469.MP4.22_45_22_15.Still001%203%20(1).jpg" property="og:image">
-    <meta content="https://uploads-ssl.webflow.com/6003416b0aa4a84bf3bfbd91/6006d8a7ee85fd0aa56789b9_WIGNET1469.MP4.22_45_22_15.Still001%203%20(1).jpg" property="twitter:image">
+	{{ with .Site.Params.author }}
+	<meta name="author" content="{{ . }}">{{ end }}
 
-	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+	<meta
+		content="https://uploads-ssl.webflow.com/6003416b0aa4a84bf3bfbd91/6006d8a7ee85fd0aa56789b9_WIGNET1469.MP4.22_45_22_15.Still001%203%20(1).jpg"
+		property="og:image">
+	<meta
+		content="https://uploads-ssl.webflow.com/6003416b0aa4a84bf3bfbd91/6006d8a7ee85fd0aa56789b9_WIGNET1469.MP4.22_45_22_15.Still001%203%20(1).jpg"
+		property="twitter:image">
+
+	<link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
 	{{ with .OutputFormats.Get "RSS" -}}
-		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+	{{ printf `
+	<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
 
-    	
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/css/style.css" rel="stylesheet" />
-    <link href="/css/syntax.css" rel="stylesheet" />
+
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+		integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+		type="text/css" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="/css/style.css" rel="stylesheet" />
+	<link href="/css/syntax.css" rel="stylesheet" />
 </head>
 
-<body id="page-top">
-    {{ partial "navigation.html" . }}
-    {{ partial "hero.html" . }}
-	{{ block "main" . }}{{ end }}
-	{{ partial "footer" . }}
+<body id="page-top"  style="background-color: #16111c;">
+	<div class="col-md-6 mx-auto">
+		{{ partial "navigation.html" . }}
+		{{ partial "hero.html" . }}
+		{{ block "main" . }}{{ end }}
+		{{ partial "footer" . }}
+	</div>
 </body>
+
 </html>
