@@ -14,7 +14,7 @@
 				{{ $counter := 0 }}
 				{{ range $element }}
 				{{ $counter = add $counter 1 }}
-				<div class="portfolio-item mx-auto pb-4" data-bs-toggle="modal" data-bs-target="#modal{{$counter}}">
+				<div class="portfolio-item mx-auto pb-4">
 					<img class="img-fluid" style="border-radius: 8px;" src="/{{.Page.Params.Hero}}" alt="..." />
 
 					<br>
