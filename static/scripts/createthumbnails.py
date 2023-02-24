@@ -151,8 +151,8 @@ miniature('be.rtl.info', 'fr', 'RTL info', 'rtlinfo.png')
 miniature('be.appsolution.lesoir', 'fr', 'Le Soir', 'lesoir.png')
 miniature('fr.k_decole.mobile', 'fr', 'Skolengo', 'skolengo.png')
 
-#miniatureFromIch('https://crucknuk.itch.io/yo-runner', "Yo!\nBox&Boxes", 'yorunner.png')
-#miniatureFromIch('https://crucknuk.itch.io/blobi', "Blobitronica", 'blobitronica.png')
-#miniatureFromIch('https://crucknuk.itch.io/deepteam', "DeepTeam", 'deepteam.png')
+miniatureFromIch('https://crucknuk.itch.io/yo-runner', "Yo!\nBox&Boxes", 'yorunner.png')
+miniatureFromIch('https://crucknuk.itch.io/blobi', "Blobitronica", 'blobitronica.png')
+miniatureFromIch('https://crucknuk.itch.io/deepteam', "DeepTeam", 'deepteam.png')
 
 print("DONE")

@@ -34,14 +34,14 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #2c3e50;
-  --bs-secondary: #2c3e50;
+  --bs-primary: #165b69;
+  --bs-secondary: #165b69;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
-  --bs-dark: #212529;
+  --bs-dark: #10424d;
   --bs-primary-rgb: 26, 188, 156;
   --bs-secondary-rgb: 44, 62, 80;
   --bs-success-rgb: 25, 135, 84;
@@ -12399,7 +12399,7 @@ html {
 }
 
 .copyright {
-  background-color: #1a252f;
+  background-color: var(--bs-dark);
 }
 
 .portfolio {
@@ -12410,9 +12410,11 @@ html {
   cursor: pointer;
   position: relative;
   display: block;
-  max-width: 25rem;
-  border-radius: 0.5rem;
+  max-width: 28rem;
+  /* border-radius: 0.5rem; */
   overflow: hidden;
+  margin: 0;
+  padding: 0.1em;
 }
 
 .portfolio .portfolio-item .portfolio-item-caption {
