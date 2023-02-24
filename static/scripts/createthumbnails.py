@@ -18,9 +18,9 @@ def getFromItchio(url):
 	link_url = []
 	data = soup.findAll('div',class_='screenshot_list')
 	for div in data:
-	    links = div.findAll('a')
-	    for a in links:
-	        link_url.append(a['href'])
+		links = div.findAll('a')
+		for a in links:
+			link_url.append(a['href'])
 
 	return { 'title': title, 'description': description, 'screenshots': link_url}
 
@@ -57,8 +57,7 @@ def pasteIcon(icon, im):
 def text(img, message):
 	font = ImageFont.truetype("Montserrat-Bold.ttf", 64)
 	d = ImageDraw.Draw(img)
-
-	d.multiline_text((img.size[0]/2, img.size[1]/2), message, font=font, anchor="ms", fill="white")
+	d.multiline_text((img.size[0]/2, img.size[1]/2), message, font=font, anchor="ms", fill="white", stroke_width=12, stroke_fill="black")
 
 	return img
 
@@ -75,7 +74,10 @@ def miniature(package, lang, message, output = ''):
 	icon = Image.open(BytesIO(requests.get(result["icon"]).content))
 	screen1 = Image.open(BytesIO(requests.get(result["screenshots"][0]).content))
 	screen2 = Image.open(BytesIO(requests.get(result["screenshots"][1]).content))
-	screen3 = Image.open(BytesIO(requests.get(result["screenshots"][2]).content))
+	screen3 = screen2
+	
+	if(len(result["screenshots"]) > 2):
+		screen3 = Image.open(BytesIO(requests.get(result["screenshots"][2]).content))
 
 	# merge screens
 	full = merge(screen1, screen2, screen3)
@@ -135,23 +137,22 @@ def placeholder():
 placeholder()
 
 miniature('com.poly.france_actu', 'en', 'Actu France\npocket news', 'actufrance.png')
-miniature('com.poly.astrology', 'en', 'Astro\ndaily news', 'astro.png')
+miniature('com.poly.astrology', 'en', 'Astro\nTarot reading', 'astro.png')
 miniature('com.poly.market', 'fr', 'Bons plans\nEn vrac!', 'envrac.png')
+miniature('com.poly.habit', 'en', 'Habit Frogs!', 'habitfrogs.png')
 
 miniature('com.clanmo.europcar', 'fr', 'Europcar', 'europcar.png')
 miniature('fr.proximity.proximity', 'fr', 'MyProximity', 'myproximity.png')
 miniature('com.dupuis.webtoonfactory', 'fr', 'Webtoon\nFactory', 'webtoonfactory.png')
 miniature('com.francelive.france', 'fr', 'FranceLive', 'francelive.png')
-
 miniature('com.beemenergy.mybeem', 'fr', 'Beem Energy', 'beemenergy.png')
 miniature('com.backelite.vingtminutes', 'fr', '20minutes', 'vingtminutes.png')
-
 miniature('be.rtl.info', 'fr', 'RTL info', 'rtlinfo.png')
 miniature('be.appsolution.lesoir', 'fr', 'Le Soir', 'lesoir.png')
 miniature('fr.k_decole.mobile', 'fr', 'Skolengo', 'skolengo.png')
 
-miniatureFromIch('https://crucknuk.itch.io/yo-runner', "Yo!\nBox&Boxes", 'yorunner.png')
-miniatureFromIch('https://crucknuk.itch.io/blobi', "Blobitronica", 'blobitronica.png')
-miniatureFromIch('https://crucknuk.itch.io/deepteam', "DeepTeam", 'deepteam.png')
+#miniatureFromIch('https://crucknuk.itch.io/yo-runner', "Yo!\nBox&Boxes", 'yorunner.png')
+#miniatureFromIch('https://crucknuk.itch.io/blobi', "Blobitronica", 'blobitronica.png')
+#miniatureFromIch('https://crucknuk.itch.io/deepteam', "DeepTeam", 'deepteam.png')
 
 print("DONE")
