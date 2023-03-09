@@ -2,12 +2,11 @@
 
 {{ if $element }}
 <div style="background-color: #e9ecef;">
-	<section class="page-section portfolio col-md-8 mx-auto" id="portfolio" style="background-color: #e9ecef;">
+	<section class="page-section portfolio mx-auto" id="portfolio" style="background-color: #e9ecef;">
 		<div class="container">
 			<div class="divider-custom">
 				<div class="divider-custom-line" style="background-color: #165b69; border-color: #165b69"></div>
-				<div class="divider-custom-icon" style="color: #165b69"><em class="fas fa-heart"></em>
-				</div>
+				<div class="divider-custom-icon" style="color: #165b69">Projects</div>
 				<div class="divider-custom-line" style="background-color: #165b69; border-color: #165b69"></div>
 			</div>
 			<br>
@@ -15,9 +14,9 @@
 				{{ $counter := 0 }}
 				{{ range $element }}
 				{{ $counter = add $counter 1 }}
-				<div class="portfolio-item">
+				<div class="portfolio-item" style="max-width: 25rem">
 					<a href="{{ .Params.Playstore }}" target="_blank" rel="noopener noreferrer"><img class="img-fluid"
-							 src="/{{.Page.Params.Hero}}"/></a>
+							src="/{{.Page.Params.Hero}}" /></a>
 					<!-- <br>
 					<br> -->
 					<!-- <a href="{{ .Params.Playstore }}" target="_blank" rel="noopener noreferrer"> <img height="50"

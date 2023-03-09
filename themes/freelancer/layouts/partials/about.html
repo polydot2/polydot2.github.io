@@ -1,15 +1,20 @@
-<section class="page-section bg-primary text-white py-5" id="about">
+<section class="page-section bg-primary text-white py-5">
 	<div class="container">
 		<!-- Icon Divider-->
 		<div class="divider-custom divider-light">
 			<div class="divider-custom-line"></div>
-			<div class="divider-custom-icon"><em class="fas fa-fire"></em></div>
+			<!-- <div class="divider-custom-icon"><em class="fas fa-fire"></em></div> -->
+			<div class="divider-custom-icon">About</div>
 			<div class="divider-custom-line"></div>
 		</div>
 		<!-- About Section Content-->
 		<div class="row">
-			<div class="col-lg-4 ms-auto"><p class="lead">{{.Site.Params.AboutLeft}}</p></div>
-			<div class="col-lg-4 me-auto"><p class="lead">{{.Site.Params.AboutRight}}</p></div>
+			<div class="col-lg-4 ms-auto">
+				<p class="lead">{{.Site.Params.AboutLeft}}</p>
+			</div>
+			<div class="col-lg-4 me-auto">
+				<p class="lead">{{.Site.Params.AboutRight}}</p>
+			</div>
 		</div>
 
 		{{ if .Site.Params.homebutton }}

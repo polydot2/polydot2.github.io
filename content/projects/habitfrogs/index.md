@@ -6,7 +6,9 @@ sidebar: false
 tags: []
 hero: "habitfrogs.png"
 summary: "A simple daily prediction app and tarot readings."
-summary: "Tarot readings card and collection. Provide a minimalist horoscope and motivations quotes."
+summary: "Simple habit trackers with frogs has a rewards."
 playstore: https://play.google.com/store/apps/details?id=com.poly.habit
 single: true
+featured: true
+featuredgif: "habitlogo.webp"
 ---

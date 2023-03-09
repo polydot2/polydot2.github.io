@@ -1,0 +1,25 @@
+{{ $element := first 1 (where .Site.RegularPages "Params.featured" true) }}
+{{ if $element }}
+<!-- 165b69 -->
+<div style="background-color: #165b69;">
+        <section>
+                {{ range $element }}
+                <div class="portfolio-item pt-2 pb-4" style="margin:auto; text-align: center;">
+                        <div class="h2 text-white">{{.Page.Params.title}}</div>
+                        <a href="{{ .Params.Playstore }}" target="_blank" rel="noopener noreferrer"><img
+                                        class="img-fluid" style="border-radius: 8%" width="200"
+                                        src="/{{.Page.Params.Featuredgif}}" /></a>
+                        <br>
+                        <div class="text-white mt-2 mb-4 lead "> {{.Page.Params.Summary}} </div>
+                        <a href="{{ .Params.Playstore }}" target="_blank" rel="noopener noreferrer"> <img height="50"
+                                        src="/google-play-badge-nopad.png" /></a>
+                        <br>
+                        <br>
+                        <!-- <img class="img-fluid" width="200" src="/habit1.png" />
+                        <img class="img-fluid" width="200" src="/habit4.png" />
+                        <img class="img-fluid" width="200" src="/habit2.png" /> -->
+                </div>
+                {{ end }}
+        </section>
+</div>
+{{ end }}
