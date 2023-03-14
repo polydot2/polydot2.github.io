@@ -2,18 +2,19 @@
 {{ if $element }}
 <section class="page-section portfolio pb-5" id="posts">
 	<div class="container">
-		<!-- Portfolio Section Heading-->
-		<!-- Icon Divider-->
+		<div class="h2" style="color: #165b69">Updates</div>
 		<div class="row justify-content-left">
-			<!-- Portfolio Item 1-->
 			{{ range $index, $element }}
 			<div class="col-md-4">
 				<div class="card mb-4 ">
-					<a href="{{.Permalink}}"><img class="card-img-top" src="/{{.Page.Params.Hero}}"
-							alt="Card image cap"></a>
+					<a style="text-decoration: none; color: black;" href="{{.Permalink}}"><img class="card-img-top"
+							src="/{{.Page.Params.Hero}}" alt="Card image cap">
+
 				</div>
 				<div><strong>{{.Title}}</strong></div>
-				<div>{{.Summary}}</div>
+				<div><time datetime="{{ .Date.Format " 2006-01-02T15:04:05" }}"> {{ .Date | time.Format ":date_long"
+						}}</time></div>
+				</a>
 			</div>
 			{{ end }}
 

@@ -4,17 +4,10 @@
 <div style="background-color: #e9ecef;">
 	<section class="page-section portfolio mx-auto" id="portfolio" style="background-color: #e9ecef;">
 		<div class="container">
-			<div class="divider-custom">
-				<div class="divider-custom-line" style="background-color: #165b69; border-color: #165b69"></div>
-				<div class="divider-custom-icon" style="color: #165b69">Projects</div>
-				<div class="divider-custom-line" style="background-color: #165b69; border-color: #165b69"></div>
-			</div>
-			<br>
-			<div class="row justify-content-center pb-5">
-				{{ $counter := 0 }}
+			<div class="h2" style="color: #165b69">Projects</div>
+			<div class="row pb-5">
 				{{ range $element }}
-				{{ $counter = add $counter 1 }}
-				<div class="portfolio-item" style="max-width: 25rem">
+				<div class="portfolio-item">
 					<a href="{{ .Params.Playstore }}" target="_blank" rel="noopener noreferrer"><img class="img-fluid"
 							src="/{{.Page.Params.Hero}}" /></a>
 					<!-- <br>

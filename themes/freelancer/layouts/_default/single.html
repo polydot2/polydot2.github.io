@@ -1,54 +1,56 @@
 {{ define "main" }}
 <div class="container pb-5">
 	<div class="row">
-		<section class="page-section portfolio {{ if .Page.Params.sidebar }} col-12 col-lg-10 {{ end }} ">
-			{{if (ne .Page.Params.Hero "") }}
-			<div class="container d-flex align-items-center flex-column pb-2">
+		<section class="page-section portfolio {{ if .Page.Params.sidebar }} col-lg-8 {{ end }} ">
+			{{ if .Content }}
+			<h2 class="page-section-heading text-secondary">{{ .Title }}</h2>
+
+			<div class="text-secondary">
+				<i class="fa-solid fa-headphones"></i>
+				Muche
+				-
+				<time datetime="{{ .Date.Format " 2006-01-02T15:04:05" }}"> {{ .Date | time.Format ":date_long"
+					}}</time>
+			</div>
+			<hr>
+			{{ end }}
+			<!-- {{if (ne .Page.Params.Hero "") }}
+			<div class="align-items-start">
 				<img class="img-fluid" style="border-radius: 12px; border: 2px solid white;"
 					src="/{{.Page.Params.Hero}}" alt="">
 			</div>
-			{{ end }}
-			<!--<<h2 class="page-section-heading text-center text-secondary mt-5">{{ .Title }}</h2>
-
-			<br>
-			div class="text-center text-secondary">
-				<i class="fa-solid fa-headphones"></i>
-				Jeremy Girerd
-				.
-				<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}"> {{ .Date | time.Format ":date_long" }}</time>
-				. <i class="fa-brands fa-readme"></i> 5 min read
-			</div>-->
-			<div class="container pt-5 text-secondary">
-				<div class="row justify-content-md-center">
-					<div class="col-10">
-						{{ .Content }}
-						{{ if not .Params.Single }}
-						{{ partial "single-pagination.html" . }}
-						{{ end}}
-
-						<br>
-						{{ if isset .Params "tags" -}}
-						<div class="col text-nowrap">
-							{{ range $index, $name := sort .Params.tags -}}
-							<a class="h4" href={{ (printf "/tags/%s/" $name) | urlize }} title="{{$name | markdownify }}"><span
-									class="badge bg-primary p-2 m-1 ">{{$name | markdownify}}</span></a>
-							{{end}}
-						</div>
-						{{ end }}
-
-					</div>
+			{{ end }} -->
+			<div class="text-secondary">
+				<div>
+					{{ .Content }}
+					<!-- {{ if not .Params.Single }}
+					{{ partial "single-pagination.html" . }}
+					{{ end}} -->
 				</div>
 			</div>
-		<br>
+			<br>
+			{{ if isset .Params "tags" -}}
+			<div class="col text-nowrap">
+				{{ range $index, $name := sort .Params.tags -}}
+				<!-- <a class="h4" href={{ (printf "/tags/%s/" $name) | urlize }} title="{{$name | markdownify }}"><span
+						class="badge bg-primary p-2 m-1 ">{{$name |
+						markdownify}}</span></a> -->
+				<span class="h4" href={{ (printf "/tags/%s/" $name) | urlize }} title="{{$name | markdownify }}"><span
+						class="badge bg-primary p-2 m-1 ">{{$name |
+						markdownify}}</span></span>
+				{{end}}
+			</div>
+			{{ end }}
+
 		</section>
-		<!--<hr>
+		<!-- <hr>
 		<br>
 		<h2> More articles </h2>
-		{{ partial "posts.html" . }}
+		{{ partial "posts.html" . }} -->
 
 		{{ if .Page.Params.sidebar }}
 		{{ partial "sidebar.html" . }}
-		{{ end }}-->
+		{{ end }}
 	</div>
 </div>
 

@@ -11,8 +11,9 @@ playstore: https://play.google.com/store/apps/details?id=com.poly.astrology
 single: true
 ---
 
-### Description
+### Concept 
 At the begining it was a proof of concept for learning Flutter technology. 
+
 But we decided to release the app it in 2022 with a simple zodiac prediction and tarot reading.
 
 <br>
@@ -28,8 +29,4 @@ But we decided to release the app it in 2022 with a simple zodiac prediction and
 ![Screen2](/as1.png)
 ![Screen3](/as2.png)
 
-<br>
-
-### Available on 
-
-<a href="https://play.google.com/store/apps/details?id=com.poly.astrology" target="_blank" rel="noopener noreferrer"> <img height="80" src="/google-play-badge-nopad.png"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.poly.astrology" target="_blank" rel="noopener noreferrer"> <img height="50" src="/google-play-badge-nopad.png"/></a>
