@@ -14,8 +14,8 @@ defaultContentLanguage = 'en'
 # English
 [languages.en.params]
   tagLine = "We make apps"
-  aboutLeft = "As a studio we build mobile apps for Android/iOs. Sometimes some games hackathon on itch.io"
-  aboutRight = "As a agency we provide support and development skills for external projects."
+  aboutLeft = "As a studio we build mobile apps for Android/iOs."
+  aboutRight = "As an agency we provide support and development skills for external projects."
 
 #[languages.en.params.homebutton]
 #  text = "See on playstore"
