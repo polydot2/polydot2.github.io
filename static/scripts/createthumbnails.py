@@ -133,27 +133,37 @@ def placeholder():
 	full = full.convert('RGB')
 	full.save('../placeholder.png', "PNG")
 
+def onlytitle(message, output = ''):
+	full = Image.new("RGBA", (768, 512), color="pink")
+
+	# paste text
+	full = text(full, message)
+
+	full = full.convert('RGB')
+	full.save('../' + output, "PNG")
+
 ## main
-placeholder()
+#placeholder()
+onlytitle("AppLanding.co", 'applanding.png')
 
-miniature('com.poly.france_actu', 'en', 'Actu France\npocket news', 'actufrance.png')
-miniature('com.poly.astrology', 'en', 'Astro\nTarot reading', 'astro.png')
-miniature('com.poly.market', 'fr', 'Bons plans\nEn vrac!', 'envrac.png')
-miniature('com.poly.habit', 'en', 'Habit Frogs!', 'habitfrogs.png')
+#miniature('com.poly.france_actu', 'en', 'Actu France\npocket news', 'actufrance.png')
+#miniature('com.poly.astrology', 'en', 'Astro\nTarot reading', 'astro.png')
+#miniature('com.poly.market', 'fr', 'Bons plans\nEn vrac!', 'envrac.png')
+#miniature('com.poly.habit', 'en', 'Habit Frogs!', 'habitfrogs.png')
 
-miniature('com.clanmo.europcar', 'fr', 'Europcar', 'europcar.png')
-miniature('fr.proximity.proximity', 'fr', 'MyProximity', 'myproximity.png')
-miniature('com.dupuis.webtoonfactory', 'fr', 'Webtoon\nFactory', 'webtoonfactory.png')
-miniature('com.francelive.france', 'fr', 'FranceLive', 'francelive.png')
-miniature('com.beemenergy.mybeem', 'fr', 'Beem Energy', 'beemenergy.png')
-miniature('com.backelite.vingtminutes', 'fr', '20minutes', 'vingtminutes.png')
-miniature('be.rtl.info', 'fr', 'RTL info', 'rtlinfo.png')
-miniature('be.appsolution.lesoir', 'fr', 'Le Soir', 'lesoir.png')
-miniature('fr.k_decole.mobile', 'fr', 'Skolengo', 'skolengo.png')
+#miniature('com.clanmo.europcar', 'fr', 'Europcar', 'europcar.png')
+#miniature('fr.proximity.proximity', 'fr', 'MyProximity', 'myproximity.png')
+#miniature('com.dupuis.webtoonfactory', 'fr', 'Webtoon\nFactory', 'webtoonfactory.png')
+#miniature('com.francelive.france', 'fr', 'FranceLive', 'francelive.png')
+#miniature('com.beemenergy.mybeem', 'fr', 'Beem Energy', 'beemenergy.png')
+#miniature('com.backelite.vingtminutes', 'fr', '20minutes', 'vingtminutes.png')
+#miniature('be.rtl.info', 'fr', 'RTL info', 'rtlinfo.png')
+#miniature('be.appsolution.lesoir', 'fr', 'Le Soir', 'lesoir.png')
+#miniature('fr.k_decole.mobile', 'fr', 'Skolengo', 'skolengo.png')
 
-miniatureFromIch('https://crucknuk.itch.io/yo-runner', "Yo!\nBox&Boxes", 'yorunner.png')
-miniatureFromIch('https://crucknuk.itch.io/blobi', "Blobitronica", 'blobitronica.png')
-miniatureFromIch('https://crucknuk.itch.io/deepteam', "DeepTeam", 'deepteam.png')
-miniatureFromIch('https://crucknuk.itch.io/spacecowworking', "Space\nCowworking", 'scoww.png')
+#miniatureFromIch('https://crucknuk.itch.io/yo-runner', "Yo!\nBox&Boxes", 'yorunner.png')
+#miniatureFromIch('https://crucknuk.itch.io/blobi', "Blobitronica", 'blobitronica.png')
+#miniatureFromIch('https://crucknuk.itch.io/deepteam', "DeepTeam", 'deepteam.png')
+#miniatureFromIch('https://crucknuk.itch.io/spacecowworking', "Space\nCowworking", 'scoww.png')
 
 print("DONE")
