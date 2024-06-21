@@ -2,7 +2,14 @@ import os, sys
 from PIL import Image, ImageDraw, ImageFont
 from google_play_scraper import app
 import requests
-from io import BytesIO
+from io import BytesIO 
+from PIL import Image
+from webdriver_manager.chrome import ChromeDriverManager
+import io #For Reading the Byte File retrieved from selenium
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 import requests
 from bs4 import BeautifulSoup
@@ -124,6 +131,32 @@ def miniatureFromIch(url, message, output = ''):
 	full = full.convert('RGB')
 	full.save('../' + output, "PNG")
 
+def miniatureFromWeb(url, message, output = ''):
+
+	if(output == ''):
+		message.replace('\n', '_').replace('!', '').lower() + '.png'
+
+	# screen web 
+	driver = webdriver.Chrome()
+	driver.get(url)
+	temp = io.BytesIO(driver.get_screenshot_as_png())
+	 
+	image = Image.open(temp)
+
+	full = Image.new("RGBA", (768, 512))
+	full.paste(image)
+
+	# paste dim
+	dim = Image.new("RGBA", (768, 512))
+	alpha = 0.7
+	full = Image.blend(full, dim, alpha)
+
+	# paste text
+	full = text(full, message)
+
+	full = full.convert('RGB')
+	full.save('../' + output, "PNG")
+
 def placeholder():
 	full = Image.new("RGBA", (768, 512))
 
@@ -133,18 +166,8 @@ def placeholder():
 	full = full.convert('RGB')
 	full.save('../placeholder.png', "PNG")
 
-def onlytitle(message, output = ''):
-	full = Image.new("RGBA", (768, 512), color="pink")
-
-	# paste text
-	full = text(full, message)
-
-	full = full.convert('RGB')
-	full.save('../' + output, "PNG")
-
 ## main
 #placeholder()
-onlytitle("AppLanding.co", 'applanding.png')
 
 #miniature('com.poly.france_actu', 'en', 'Actu France\npocket news', 'actufrance.png')
 #miniature('com.poly.astrology', 'en', 'Astro\nTarot reading', 'astro.png')
@@ -154,7 +177,7 @@ onlytitle("AppLanding.co", 'applanding.png')
 #miniature('com.clanmo.europcar', 'fr', 'Europcar', 'europcar.png')
 #miniature('fr.proximity.proximity', 'fr', 'MyProximity', 'myproximity.png')
 #miniature('com.dupuis.webtoonfactory', 'fr', 'Webtoon\nFactory', 'webtoonfactory.png')
-#miniature('com.francelive.france', 'fr', 'FranceLive', 'francelive.png')
+##miniature('com.francelive.france', 'fr', 'FranceLive', 'francelive.png')
 #miniature('com.beemenergy.mybeem', 'fr', 'Beem Energy', 'beemenergy.png')
 #miniature('com.backelite.vingtminutes', 'fr', '20minutes', 'vingtminutes.png')
 #miniature('be.rtl.info', 'fr', 'RTL info', 'rtlinfo.png')
@@ -164,6 +187,8 @@ onlytitle("AppLanding.co", 'applanding.png')
 #miniatureFromIch('https://crucknuk.itch.io/yo-runner', "Yo!\nBox&Boxes", 'yorunner.png')
 #miniatureFromIch('https://crucknuk.itch.io/blobi', "Blobitronica", 'blobitronica.png')
 #miniatureFromIch('https://crucknuk.itch.io/deepteam', "DeepTeam", 'deepteam.png')
-#miniatureFromIch('https://crucknuk.itch.io/spacecowworking', "Space\nCowworking", 'scoww.png')
+
+miniatureFromWeb('https://ma-rupture-sentimentale.fr', 'Ma rupture.fr', 'marupture.png')
+miniatureFromWeb('https://zenguide.fr', 'ZenGuide.fr', 'zenGuide.png')
 
 print("DONE")
